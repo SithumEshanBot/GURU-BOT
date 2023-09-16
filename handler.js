@@ -282,7 +282,7 @@ export async function handler(chatUpdate) {
                 if (!('detect' in chat))
                     chat.detect = false
                 if (!('sWelcome' in chat))
-                    chat.sWelcome = ''
+                    chat.sWelcome = 'true'
                 if (!('sBye' in chat))
                     chat.sBye = ''
                 if (!('sPromote' in chat))
@@ -316,7 +316,7 @@ export async function handler(chatUpdate) {
                     isBanned: false,
                     welcome: true,
                     detect: false,
-                    sWelcome: '',
+                    sWelcome: 'true',
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
@@ -587,7 +587,7 @@ export async function handler(chatUpdate) {
                             for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
                                 let data = (await conn.onWhatsApp(jid))[0] || {}
                                 if (data.exists)
-                                    m.reply(`*🗂️ Plugin:* ${m.plugin}\n*👤 Sender:* ${m.sender}\n*💬 Chat:* ${m.chat}\n*💻 Command:* ${usedPrefix}${command} ${args.join(' ')}\n📄 *Error Logs:*\n\n\`\`\`${text}\`\`\``.trim(), data.jid)
+                                    m.reply(`*🗂️ Plugin:* ${m.plugin}\n*👤 Sender:* ${m.sender}\n*💬 Chat:* ${m.chat}\n*♉ Command:* ${usedPrefix}${command} ${args.join(' ')}\n📄 *Error Logs:*\n\n\`\`\`${text}\`\`\``.trim(), data.jid)
                             }
                         m.reply(text)
                     }
@@ -827,12 +827,12 @@ TO DEACTIVE , PRESS
 global.dfail = (type, m, conn) => {
     let msg = {
         rowner: '*ᴏɴʟʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* • This command can only be used by the *Creator of the bot*',
-        owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • This command can only be used by the *Bot Owner',
+        owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • This command can only be used by the *♻️Bot Owner🛡️*',
         mods: '*ᴏɴʟʏ ᴍᴏᴅᴇʀᴀᴛᴏʀ* •This function is only for *For Bot moderators*',
         premium: '*ᴏɴʟʏ ᴘʀᴇᴍɪᴜᴍ* • This command is for *Premium members only',
         group: '*ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • This command can only be used in groups',
         private: '*ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • This command can only be used in the *private chat of the Bot*',
-        admin: '*ᴏɴʟʏ ᴀᴅᴍɪɴ* • This command is only for *Group Admins*',
+        admin: '*ᴏɴʟʏ ᴀᴅᴍɪɴ* • This command is only for *Group Admins🛡️*',
         botAdmin: '*ᴏɴʟʏ ʙᴏᴛ ᴀᴅᴍɪɴ* • To use this command I must be *Admin!*',
         unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ ʏᴇᴛ* •  Sign in to use this feature Typing:\n\n*/reg name.age*\n\n📌Example : */reg GURU.20*', 
         restrict: '*ʀᴇsᴛʀɪᴄᴛ* • This feature is *disabled*',
